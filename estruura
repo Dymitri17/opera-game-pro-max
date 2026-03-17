@@ -1,0 +1,57 @@
+
+---
+
+## 🌐 index.html (base do jogo)
+
+```html id="p9x4l2"
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Opera Game Pro Max</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🎮 Opera Game Pro Max</h1>
+  <canvas id="gameCanvas"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+body {
+  text-align: center;
+  background: #111;
+  color: white;
+  font-family: Arial;
+}
+
+canvas {
+  background: #222;
+  margin-top: 20px;
+}
+
+const canvas = document.getElementById("gameCanvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = 500;
+canvas.height = 300;
+
+let x = 50;
+let y = 150;
+
+function drawPlayer() {
+  ctx.fillStyle = "lime";
+  ctx.fillRect(x, y, 30, 30);
+}
+
+function update() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawPlayer();
+}
+
+setInterval(update, 30);
+
+git add .
+git commit -m "estrutura inicial do jogo"
+git push
